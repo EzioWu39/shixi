@@ -16,7 +16,7 @@ import com.function.*;
  */
 public class DlgRegister extends javax.swing.JDialog {
     
-    
+    DlgTag tag = new DlgTag(this);
     java.awt.Frame parent;
     /**
      * Creates new form DlgRegister
@@ -55,8 +55,10 @@ public class DlgRegister extends javax.swing.JDialog {
         TF_userName = new javax.swing.JTextField();
         PF_userPwd = new javax.swing.JPasswordField();
         PF_pwdCheck = new javax.swing.JPasswordField();
-        BTN_Register = new javax.swing.JButton();
+        BTN_TAG = new javax.swing.JButton();
         BTN_Back = new javax.swing.JButton();
+        LB_tag = new javax.swing.JLabel();
+        BTN_register = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -66,10 +68,10 @@ public class DlgRegister extends javax.swing.JDialog {
 
         jLabel3.setText("确认密码");
 
-        BTN_Register.setText("下一步");
-        BTN_Register.addMouseListener(new java.awt.event.MouseAdapter() {
+        BTN_TAG.setText("选择标签");
+        BTN_TAG.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BTN_RegisterMouseClicked(evt);
+                BTN_TAGMouseClicked(evt);
             }
         });
 
@@ -80,29 +82,41 @@ public class DlgRegister extends javax.swing.JDialog {
             }
         });
 
+        BTN_register.setText("注册");
+        BTN_register.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BTN_registerMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(130, 130, 130)
+                .addComponent(BTN_register)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addComponent(BTN_Back)
+                .addGap(116, 116, 116))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(99, 99, 99)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(99, 99, 99)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3))
-                        .addGap(56, 56, 56)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(TF_userName, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
-                            .addComponent(PF_userPwd)
-                            .addComponent(PF_pwdCheck)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(121, 121, 121)
-                        .addComponent(BTN_Register)
-                        .addGap(46, 46, 46)
-                        .addComponent(BTN_Back)))
-                .addContainerGap(80, Short.MAX_VALUE))
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3))
+                .addGap(80, 80, 80)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(TF_userName, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
+                    .addComponent(PF_userPwd)
+                    .addComponent(PF_pwdCheck))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(BTN_TAG)
+                .addGap(46, 46, 46)
+                .addComponent(LB_tag, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -120,10 +134,14 @@ public class DlgRegister extends javax.swing.JDialog {
                     .addComponent(jLabel3)
                     .addComponent(PF_pwdCheck, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(BTN_TAG, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(LB_tag, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BTN_Register)
-                    .addComponent(BTN_Back))
-                .addGap(32, 32, 32))
+                    .addComponent(BTN_Back)
+                    .addComponent(BTN_register))
+                .addGap(29, 29, 29))
         );
 
         pack();
@@ -134,19 +152,45 @@ public class DlgRegister extends javax.swing.JDialog {
         quit();
     }//GEN-LAST:event_BTN_BackMouseClicked
 
-    private void BTN_RegisterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BTN_RegisterMouseClicked
+    private void BTN_TAGMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BTN_TAGMouseClicked
         // TODO add your handling code here:
-        if(!"".equalsIgnoreCase(TF_userName.getText())){
+        //this.setVisible(false);
+        tag.taglist = "";
+        LB_tag.setText("");
+        tag.setVisible(true);
+        LB_tag.setText(tag.taglist);
+    }//GEN-LAST:event_BTN_TAGMouseClicked
+
+    private void BTN_registerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BTN_registerMouseClicked
+        // TODO add your handling code here:
+        if(!"".equalsIgnoreCase(TF_userName.getText())){                        //验证用户名输入
             String username = TF_userName.getText();
-            if(!"".equalsIgnoreCase(String.valueOf(PF_userPwd.getPassword()))){
+            if(!"".equalsIgnoreCase(String.valueOf(PF_userPwd.getPassword()))){  //验证密码输入
                 String pwd= String.valueOf(PF_userPwd.getPassword());
-                if(!"".equalsIgnoreCase(String.valueOf(PF_pwdCheck.getPassword()))){
+                if(!"".equalsIgnoreCase(String.valueOf(PF_pwdCheck.getPassword()))){   //确认密码
                     String pcheck= String.valueOf(PF_pwdCheck.getPassword());
                     if(pcheck.equalsIgnoreCase(pwd)){
-                        DlgTag dlg = new DlgTag(this);
-                        //this.setVisible(false);
-                        dlg.setVisible(true);
-                        //com.function.UserManager.getUserManager().register("126", "321");
+                        if(!"".equalsIgnoreCase(LB_tag.getText())){                 //标签选择确认
+                            String res = com.function.UserManager.getUserManager().register(username, pwd,LB_tag.getText());
+                            switch(res){
+                            case "registerSuccess":
+                                JOptionPane.showMessageDialog(null, "注册成功", "成功", JOptionPane.INFORMATION_MESSAGE);
+                                this.setVisible(false);
+                                parent.setVisible(true);
+                                break;
+                            case "registerFailed":
+                                JOptionPane.showMessageDialog(null, "注册失败", "警告", JOptionPane.ERROR_MESSAGE);
+                                break;
+                            case "registerExist":
+                                JOptionPane.showMessageDialog(null, "用户名已存在", "警告", JOptionPane.ERROR_MESSAGE);
+                                break;
+                            case "registerNull":
+                                break;
+                        }
+                        }
+                        else{
+                            JOptionPane.showMessageDialog(null, "标签不能为空", "警告", JOptionPane.ERROR_MESSAGE);
+                        }
                     }
                     else{
                         JOptionPane.showMessageDialog(null, "两次输入密码不同", "警告", JOptionPane.ERROR_MESSAGE);
@@ -163,8 +207,7 @@ public class DlgRegister extends javax.swing.JDialog {
         else{
             JOptionPane.showMessageDialog(null, "用户名不为空", "警告", JOptionPane.ERROR_MESSAGE);
         }
-        
-    }//GEN-LAST:event_BTN_RegisterMouseClicked
+    }//GEN-LAST:event_BTN_registerMouseClicked
 
      private void quit() {
 		int flag = 0;
@@ -217,7 +260,9 @@ public class DlgRegister extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BTN_Back;
-    private javax.swing.JButton BTN_Register;
+    private javax.swing.JButton BTN_TAG;
+    private javax.swing.JButton BTN_register;
+    private javax.swing.JLabel LB_tag;
     private javax.swing.JPasswordField PF_pwdCheck;
     private javax.swing.JPasswordField PF_userPwd;
     private javax.swing.JTextField TF_userName;
