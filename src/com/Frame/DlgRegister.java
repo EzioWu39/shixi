@@ -7,13 +7,16 @@
 package com.Frame;
 
 import javax.swing.JDialog;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author VC
  */
 public class DlgRegister extends javax.swing.JDialog {
-
+    
+    
+    java.awt.Frame parent;
     /**
      * Creates new form DlgRegister
      */
@@ -21,13 +24,19 @@ public class DlgRegister extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
     }
-    public DlgRegister(java.awt.Frame dialog){
-        super(dialog,"注册",true);
+    public DlgRegister(java.awt.Frame login){
+        super(login,"注册",true);
         initComponents();
-        
+        parent = login;
         this.setResizable(false);			//设置窗口不可放大缩小
        // this.setDefaultCloseOperation (JDialog.DO_NOTHING_ON_CLOSE);
         com.function.Window.setWindowCenter(this);
+        this.addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosing(java.awt.event.WindowEvent e) {
+                quit();
+            }
+        });
     }
 
     /**
@@ -57,6 +66,11 @@ public class DlgRegister extends javax.swing.JDialog {
         jLabel3.setText("确认密码");
 
         BTN_Register.setText("注册");
+        BTN_Register.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BTN_RegisterMouseClicked(evt);
+            }
+        });
 
         BTN_Back.setText("返回");
         BTN_Back.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -116,9 +130,26 @@ public class DlgRegister extends javax.swing.JDialog {
 
     private void BTN_BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BTN_BackMouseClicked
         // TODO add your handling code here:
-        this.setVisible(false);
+        quit();
     }//GEN-LAST:event_BTN_BackMouseClicked
 
+    private void BTN_RegisterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BTN_RegisterMouseClicked
+        // TODO add your handling code here:
+        DlgTag dlg = new DlgTag(this);
+        this.setVisible(false);
+        dlg.setVisible(true);
+    }//GEN-LAST:event_BTN_RegisterMouseClicked
+
+     private void quit() {
+		int flag = 0;
+		String msg = "您 现 在 要 退 出 注 册 吗 ？";
+		flag = JOptionPane.showConfirmDialog(null, msg, "提示", JOptionPane.YES_NO_OPTION);
+		if(flag == JOptionPane.YES_OPTION) {
+			this.setVisible(false);
+			parent.setVisible(true);
+		}//End if(flag == JOptionPane.YES_OPTION)
+		return;
+	}
     /**
      * @param args the command line arguments
      */
@@ -150,12 +181,7 @@ public class DlgRegister extends javax.swing.JDialog {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 DlgRegister dialog = new DlgRegister(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
+                
                 dialog.setVisible(true);
             }
         });

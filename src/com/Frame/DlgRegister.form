@@ -104,6 +104,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="&#x6ce8;&#x518c;"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BTN_RegisterMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="BTN_Back">
       <Properties>

@@ -6,7 +6,10 @@
 
 package com.Frame;
 
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -24,6 +27,12 @@ public class LoginFrame extends javax.swing.JFrame {
         this.setResizable (false);			//设置窗口不可放大缩小
 	com.function.Window.setWindowCenter(this);
 	this.setVisible(true);
+        this.addWindowListener(new WindowAdapter() {
+                        @Override
+			public void windowClosing(WindowEvent we) {
+				quit();
+			}//End windowClosing
+		});
         //com.function.Window.setWindowCenter(this);
     }
     /**
@@ -192,9 +201,20 @@ public class LoginFrame extends javax.swing.JFrame {
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         // TODO add your handling code here:
         //DlgRegister dlg = new DlgRegister(this);
+        this.setVisible(false);
         re.show();
     }//GEN-LAST:event_jButton2MouseClicked
 
+    private void quit() {
+		int flag = 0;
+		String msg = "您 现 在 要 关 闭 系 统 吗 ？";
+		flag = JOptionPane.showConfirmDialog(null, msg, "提示", JOptionPane.YES_NO_OPTION);
+		if(flag == JOptionPane.YES_OPTION) {
+			this.setVisible(false);
+			System.exit(0);
+		}//End if(flag == JOptionPane.YES_OPTION)
+		return;
+	}
     /**
      * @param args the command line arguments
      */
