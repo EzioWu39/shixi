@@ -6,14 +6,23 @@
 
 package com.Frame;
 
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+import java.util.LinkedList;
+import javax.swing.JCheckBox;
 import javax.swing.JDialog;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author VC
  */
-public class DlgTag extends javax.swing.JDialog {
-
+public class DlgTag extends javax.swing.JDialog 
+implements ItemListener
+{
+    
+    LinkedList<String>tag = new LinkedList<String>();
+    int num_tag=0;
     /**
      * Creates new form DlgTag
      */
@@ -24,6 +33,26 @@ public class DlgTag extends javax.swing.JDialog {
     public DlgTag(JDialog dialog){
         super(dialog,"选择标签",true);
         initComponents();
+        
+        
+        JCB_act.addItemListener(this);// 加入监听
+        JCB_adv.addItemListener(this);
+        JCB_anime.addItemListener(this);
+        JCB_black.addItemListener(this);
+        JCB_child.addItemListener(this);
+        JCB_crime.addItemListener(this);
+        JCB_demo.addItemListener(this);
+        JCB_doc.addItemListener(this);
+        JCB_drama.addItemListener(this);
+        JCB_fanta.addItemListener(this);
+        JCB_love.addItemListener(this);
+        JCB_music.addItemListener(this);
+        JCB_plot.addItemListener(this);
+        JCB_sca.addItemListener(this);
+        JCB_tech.addItemListener(this);
+        JCB_terri.addItemListener(this);
+        JCB_war.addItemListener(this);
+        JCB_west.addItemListener(this);
         
         this.setResizable(false);			//设置窗口不可放大缩小
         this.setDefaultCloseOperation (JDialog.DO_NOTHING_ON_CLOSE);
@@ -40,145 +69,218 @@ public class DlgTag extends javax.swing.JDialog {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jCheckBox5 = new javax.swing.JCheckBox();
-        jCheckBox6 = new javax.swing.JCheckBox();
-        jCheckBox7 = new javax.swing.JCheckBox();
-        jCheckBox8 = new javax.swing.JCheckBox();
-        jCheckBox9 = new javax.swing.JCheckBox();
-        jCheckBox10 = new javax.swing.JCheckBox();
-        jCheckBox11 = new javax.swing.JCheckBox();
-        jCheckBox12 = new javax.swing.JCheckBox();
-        jCheckBox13 = new javax.swing.JCheckBox();
-        jCheckBox14 = new javax.swing.JCheckBox();
-        jCheckBox15 = new javax.swing.JCheckBox();
-        jCheckBox16 = new javax.swing.JCheckBox();
-        jCheckBox17 = new javax.swing.JCheckBox();
-        jCheckBox18 = new javax.swing.JCheckBox();
+        JCB_adv = new javax.swing.JCheckBox();
+        JCB_anime = new javax.swing.JCheckBox();
+        JCB_child = new javax.swing.JCheckBox();
+        JCB_drama = new javax.swing.JCheckBox();
+        JCB_fanta = new javax.swing.JCheckBox();
+        JCB_love = new javax.swing.JCheckBox();
+        JCB_plot = new javax.swing.JCheckBox();
+        JCB_act = new javax.swing.JCheckBox();
+        JCB_crime = new javax.swing.JCheckBox();
+        JCB_sca = new javax.swing.JCheckBox();
+        JCB_terri = new javax.swing.JCheckBox();
+        JCB_tech = new javax.swing.JCheckBox();
+        JCB_demo = new javax.swing.JCheckBox();
+        JCB_war = new javax.swing.JCheckBox();
+        JCB_music = new javax.swing.JCheckBox();
+        JCB_doc = new javax.swing.JCheckBox();
+        JCB_west = new javax.swing.JCheckBox();
+        JCB_black = new javax.swing.JCheckBox();
+        BTN_Confirm = new javax.swing.JButton();
+        BTN_Back = new javax.swing.JButton();
+        JLB_test = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setText("选择您喜欢的电影类型");
 
-        jCheckBox1.setText("冒险");
+        JCB_adv.setText("冒险");
 
-        jCheckBox2.setText("动画");
+        JCB_anime.setText("动画");
 
-        jCheckBox3.setText("儿童");
+        JCB_child.setText("儿童");
 
-        jCheckBox4.setText("喜剧");
+        JCB_drama.setText("喜剧");
 
-        jCheckBox5.setText("奇幻");
+        JCB_fanta.setText("奇幻");
 
-        jCheckBox6.setText("爱情");
+        JCB_love.setText("爱情");
 
-        jCheckBox7.setText("剧情");
+        JCB_plot.setText("剧情");
 
-        jCheckBox8.setText("动作");
+        JCB_act.setText("动作");
 
-        jCheckBox9.setText("犯罪");
+        JCB_crime.setText("犯罪");
 
-        jCheckBox10.setText("惊悚");
+        JCB_sca.setText("惊悚");
 
-        jCheckBox11.setText("恐怖");
+        JCB_terri.setText("恐怖");
 
-        jCheckBox12.setText("科幻");
+        JCB_tech.setText("科幻");
 
-        jCheckBox13.setText("魔幻");
+        JCB_demo.setText("魔幻");
 
-        jCheckBox14.setText("战争");
+        JCB_war.setText("战争");
 
-        jCheckBox15.setText("音乐");
+        JCB_music.setText("音乐");
 
-        jCheckBox16.setText("纪录片");
+        JCB_doc.setText("纪录片");
 
-        jCheckBox17.setText("西部");
+        JCB_west.setText("西部");
 
-        jCheckBox18.setText("黑色");
+        JCB_black.setText("黑色");
+
+        BTN_Confirm.setText("确认");
+        BTN_Confirm.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BTN_ConfirmMouseClicked(evt);
+            }
+        });
+
+        BTN_Back.setText("返回");
+        BTN_Back.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BTN_BackMouseClicked(evt);
+            }
+        });
+
+        jLabel2.setText("jLabel2");
+
+        jLabel3.setText("jLabel3");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(107, 107, 107)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(JCB_child)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(198, 198, 198)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(107, 107, 107)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jCheckBox3)
-                                .addGap(266, 266, 266))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCheckBox1)
-                                    .addComponent(jCheckBox2)
-                                    .addComponent(jCheckBox4)
-                                    .addComponent(jCheckBox5)
-                                    .addComponent(jCheckBox6))
+                                    .addComponent(JCB_adv)
+                                    .addComponent(JCB_anime)
+                                    .addComponent(JCB_drama)
+                                    .addComponent(JCB_fanta)
+                                    .addComponent(JCB_love))
                                 .addGap(84, 84, 84)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCheckBox7)
-                                    .addComponent(jCheckBox8)
-                                    .addComponent(jCheckBox9)
-                                    .addComponent(jCheckBox10)
-                                    .addComponent(jCheckBox11)
-                                    .addComponent(jCheckBox12))
-                                .addGap(72, 72, 72)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCheckBox18)
-                                    .addComponent(jCheckBox17)
-                                    .addComponent(jCheckBox16)
-                                    .addComponent(jCheckBox15)
-                                    .addComponent(jCheckBox14)
-                                    .addComponent(jCheckBox13))))))
-                .addContainerGap(131, Short.MAX_VALUE))
+                                    .addComponent(JCB_plot)
+                                    .addComponent(JCB_act)
+                                    .addComponent(JCB_crime)
+                                    .addComponent(JCB_sca)
+                                    .addComponent(JCB_terri)
+                                    .addComponent(JCB_tech)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(91, 91, 91)
+                                .addComponent(BTN_Confirm)
+                                .addGap(33, 33, 33)
+                                .addComponent(BTN_Back))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(JLB_test, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(16, 16, 16)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(JCB_black)
+                            .addComponent(JCB_west)
+                            .addComponent(JCB_music)
+                            .addComponent(JCB_war)
+                            .addComponent(JCB_demo)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(JCB_doc))
+                                .addGap(38, 38, 38)
+                                .addComponent(jLabel3)))))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(jLabel1)
-                .addGap(39, 39, 39)
+                .addGap(28, 28, 28)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(45, 45, 45))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel2)
+                                .addComponent(jLabel3))
+                            .addComponent(JLB_test, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(39, 39, 39)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox1)
-                    .addComponent(jCheckBox7)
-                    .addComponent(jCheckBox13))
+                    .addComponent(JCB_adv)
+                    .addComponent(JCB_plot)
+                    .addComponent(JCB_demo))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox2)
-                    .addComponent(jCheckBox8)
-                    .addComponent(jCheckBox14))
+                    .addComponent(JCB_anime)
+                    .addComponent(JCB_act)
+                    .addComponent(JCB_war))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox3)
-                    .addComponent(jCheckBox9)
-                    .addComponent(jCheckBox15))
+                    .addComponent(JCB_child)
+                    .addComponent(JCB_crime)
+                    .addComponent(JCB_music))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox4)
-                    .addComponent(jCheckBox10)
-                    .addComponent(jCheckBox16))
+                    .addComponent(JCB_drama)
+                    .addComponent(JCB_sca)
+                    .addComponent(JCB_doc))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox5)
-                    .addComponent(jCheckBox11)
-                    .addComponent(jCheckBox17))
+                    .addComponent(JCB_fanta)
+                    .addComponent(JCB_terri)
+                    .addComponent(JCB_west))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox6)
-                    .addComponent(jCheckBox12)
-                    .addComponent(jCheckBox18))
-                .addContainerGap(98, Short.MAX_VALUE))
+                    .addComponent(JCB_love)
+                    .addComponent(JCB_tech)
+                    .addComponent(JCB_black))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BTN_Confirm)
+                    .addComponent(BTN_Back))
+                .addGap(36, 36, 36))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BTN_BackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BTN_BackMouseClicked
+        // TODO add your handling code here:
+        this.setVisible(false);
+    }//GEN-LAST:event_BTN_BackMouseClicked
+
+    private void BTN_ConfirmMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BTN_ConfirmMouseClicked
+        // TODO add your handling code here:
+        if(!tag.isEmpty()){
+            String taglist = "";
+            String end = tag.getLast();
+            for(String str:tag){
+                System.out.println(str);
+                if(str!=end){
+                    taglist += str+"|";
+                }
+                else
+                    taglist +=str;
+            }
+            System.out.println(taglist);
+        }
+            else
+                JOptionPane.showMessageDialog(null, "标签不能为空", "警告", JOptionPane.ERROR_MESSAGE);
+        
+        
+    }//GEN-LAST:event_BTN_ConfirmMouseClicked
+
+    
 
     /**
      * @param args the command line arguments
@@ -223,24 +325,44 @@ public class DlgTag extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox10;
-    private javax.swing.JCheckBox jCheckBox11;
-    private javax.swing.JCheckBox jCheckBox12;
-    private javax.swing.JCheckBox jCheckBox13;
-    private javax.swing.JCheckBox jCheckBox14;
-    private javax.swing.JCheckBox jCheckBox15;
-    private javax.swing.JCheckBox jCheckBox16;
-    private javax.swing.JCheckBox jCheckBox17;
-    private javax.swing.JCheckBox jCheckBox18;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JCheckBox jCheckBox6;
-    private javax.swing.JCheckBox jCheckBox7;
-    private javax.swing.JCheckBox jCheckBox8;
-    private javax.swing.JCheckBox jCheckBox9;
+    private javax.swing.JButton BTN_Back;
+    private javax.swing.JButton BTN_Confirm;
+    private javax.swing.JCheckBox JCB_act;
+    private javax.swing.JCheckBox JCB_adv;
+    private javax.swing.JCheckBox JCB_anime;
+    private javax.swing.JCheckBox JCB_black;
+    private javax.swing.JCheckBox JCB_child;
+    private javax.swing.JCheckBox JCB_crime;
+    private javax.swing.JCheckBox JCB_demo;
+    private javax.swing.JCheckBox JCB_doc;
+    private javax.swing.JCheckBox JCB_drama;
+    private javax.swing.JCheckBox JCB_fanta;
+    private javax.swing.JCheckBox JCB_love;
+    private javax.swing.JCheckBox JCB_music;
+    private javax.swing.JCheckBox JCB_plot;
+    private javax.swing.JCheckBox JCB_sca;
+    private javax.swing.JCheckBox JCB_tech;
+    private javax.swing.JCheckBox JCB_terri;
+    private javax.swing.JCheckBox JCB_war;
+    private javax.swing.JCheckBox JCB_west;
+    private javax.swing.JLabel JLB_test;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void itemStateChanged(ItemEvent e) {
+        JCheckBox jcb = (JCheckBox) e.getItem();// 将得到的事件强制转化为JCheckBox类
+        String title = jcb.getText();
+	if (jcb.isSelected()) {// 判断是否被选择
+            tag.add(title);
+            num_tag++;
+            System.out.println(tag);
+	} else {
+            tag.remove(title);
+            num_tag--;
+            System.out.println(tag);
+	}
+    }
 }

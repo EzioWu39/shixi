@@ -24,94 +24,124 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="107" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="JCB_child" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="198" max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="107" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jCheckBox3" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="266" max="-2" attributes="0"/>
-                          </Group>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jCheckBox2" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jCheckBox4" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jCheckBox5" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jCheckBox6" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="JCB_adv" min="-2" max="-2" attributes="0"/>
+                                  <Component id="JCB_anime" min="-2" max="-2" attributes="0"/>
+                                  <Component id="JCB_drama" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="JCB_fanta" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="JCB_love" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jCheckBox7" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jCheckBox8" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jCheckBox9" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jCheckBox10" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jCheckBox11" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jCheckBox12" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="JCB_plot" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="JCB_act" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="JCB_crime" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="JCB_sca" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="JCB_terri" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="JCB_tech" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jCheckBox18" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jCheckBox17" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jCheckBox16" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jCheckBox15" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jCheckBox14" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jCheckBox13" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
+                              <Component id="BTN_Confirm" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                              <Component id="BTN_Back" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="JLB_test" min="-2" pref="61" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="JCB_black" min="-2" max="-2" attributes="0"/>
+                          <Component id="JCB_west" min="-2" max="-2" attributes="0"/>
+                          <Component id="JCB_music" min="-2" max="-2" attributes="0"/>
+                          <Component id="JCB_war" min="-2" max="-2" attributes="0"/>
+                          <Component id="JCB_demo" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="JCB_doc" min="-2" max="-2" attributes="0"/>
                               </Group>
+                              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="131" max="32767" attributes="0"/>
+              <EmptySpace pref="51" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="JLB_test" min="-2" pref="15" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jCheckBox1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jCheckBox7" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="jCheckBox13" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JCB_adv" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JCB_plot" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="JCB_demo" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jCheckBox2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jCheckBox8" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jCheckBox14" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JCB_anime" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JCB_act" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JCB_war" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jCheckBox3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jCheckBox9" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jCheckBox15" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JCB_child" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JCB_crime" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JCB_music" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jCheckBox4" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jCheckBox10" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jCheckBox16" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JCB_drama" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JCB_sca" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JCB_doc" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jCheckBox5" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jCheckBox11" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jCheckBox17" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JCB_fanta" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JCB_terri" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JCB_west" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jCheckBox6" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jCheckBox12" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jCheckBox18" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JCB_love" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JCB_tech" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JCB_black" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="98" max="32767" attributes="0"/>
+              <EmptySpace pref="37" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="BTN_Confirm" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="BTN_Back" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -122,94 +152,122 @@
         <Property name="text" type="java.lang.String" value="&#x9009;&#x62e9;&#x60a8;&#x559c;&#x6b22;&#x7684;&#x7535;&#x5f71;&#x7c7b;&#x578b;"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox1">
+    <Component class="javax.swing.JCheckBox" name="JCB_adv">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#x5192;&#x9669;"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox2">
+    <Component class="javax.swing.JCheckBox" name="JCB_anime">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#x52a8;&#x753b;"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox3">
+    <Component class="javax.swing.JCheckBox" name="JCB_child">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#x513f;&#x7ae5;"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox4">
+    <Component class="javax.swing.JCheckBox" name="JCB_drama">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#x559c;&#x5267;"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox5">
+    <Component class="javax.swing.JCheckBox" name="JCB_fanta">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#x5947;&#x5e7b;"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox6">
+    <Component class="javax.swing.JCheckBox" name="JCB_love">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#x7231;&#x60c5;"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox7">
+    <Component class="javax.swing.JCheckBox" name="JCB_plot">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#x5267;&#x60c5;"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox8">
+    <Component class="javax.swing.JCheckBox" name="JCB_act">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#x52a8;&#x4f5c;"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox9">
+    <Component class="javax.swing.JCheckBox" name="JCB_crime">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#x72af;&#x7f6a;"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox10">
+    <Component class="javax.swing.JCheckBox" name="JCB_sca">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#x60ca;&#x609a;"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox11">
+    <Component class="javax.swing.JCheckBox" name="JCB_terri">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#x6050;&#x6016;"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox12">
+    <Component class="javax.swing.JCheckBox" name="JCB_tech">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#x79d1;&#x5e7b;"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox13">
+    <Component class="javax.swing.JCheckBox" name="JCB_demo">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#x9b54;&#x5e7b;"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox14">
+    <Component class="javax.swing.JCheckBox" name="JCB_war">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#x6218;&#x4e89;"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox15">
+    <Component class="javax.swing.JCheckBox" name="JCB_music">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#x97f3;&#x4e50;"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox16">
+    <Component class="javax.swing.JCheckBox" name="JCB_doc">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#x7eaa;&#x5f55;&#x7247;"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox17">
+    <Component class="javax.swing.JCheckBox" name="JCB_west">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#x897f;&#x90e8;"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox18">
+    <Component class="javax.swing.JCheckBox" name="JCB_black">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#x9ed1;&#x8272;"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="BTN_Confirm">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&#x786e;&#x8ba4;"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BTN_ConfirmMouseClicked"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="BTN_Back">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&#x8fd4;&#x56de;"/>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BTN_BackMouseClicked"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="JLB_test">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel2"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel3">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel3"/>
       </Properties>
     </Component>
   </SubComponents>

@@ -27,6 +27,7 @@ public class LoginFrame extends javax.swing.JFrame {
         this.setResizable (false);			//设置窗口不可放大缩小
 	com.function.Window.setWindowCenter(this);
 	this.setVisible(true);
+        this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         this.addWindowListener(new WindowAdapter() {
                         @Override
 			public void windowClosing(WindowEvent we) {

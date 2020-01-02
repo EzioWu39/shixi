@@ -8,6 +8,7 @@ package com.Frame;
 
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
+import com.function.*;
 
 /**
  *
@@ -29,7 +30,7 @@ public class DlgRegister extends javax.swing.JDialog {
         initComponents();
         parent = login;
         this.setResizable(false);			//设置窗口不可放大缩小
-       // this.setDefaultCloseOperation (JDialog.DO_NOTHING_ON_CLOSE);
+        this.setDefaultCloseOperation (JDialog.DO_NOTHING_ON_CLOSE);
         com.function.Window.setWindowCenter(this);
         this.addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
@@ -65,7 +66,7 @@ public class DlgRegister extends javax.swing.JDialog {
 
         jLabel3.setText("确认密码");
 
-        BTN_Register.setText("注册");
+        BTN_Register.setText("下一步");
         BTN_Register.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 BTN_RegisterMouseClicked(evt);
@@ -135,9 +136,34 @@ public class DlgRegister extends javax.swing.JDialog {
 
     private void BTN_RegisterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BTN_RegisterMouseClicked
         // TODO add your handling code here:
-        DlgTag dlg = new DlgTag(this);
-        this.setVisible(false);
-        dlg.setVisible(true);
+        if(!"".equalsIgnoreCase(TF_userName.getText())){
+            String username = TF_userName.getText();
+            if(!"".equalsIgnoreCase(String.valueOf(PF_userPwd.getPassword()))){
+                String pwd= String.valueOf(PF_userPwd.getPassword());
+                if(!"".equalsIgnoreCase(String.valueOf(PF_pwdCheck.getPassword()))){
+                    String pcheck= String.valueOf(PF_pwdCheck.getPassword());
+                    if(pcheck.equalsIgnoreCase(pwd)){
+                        DlgTag dlg = new DlgTag(this);
+                        //this.setVisible(false);
+                        dlg.setVisible(true);
+                        //com.function.UserManager.getUserManager().register("126", "321");
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(null, "两次输入密码不同", "警告", JOptionPane.ERROR_MESSAGE);
+                    }
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "请再次输入密码", "警告", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "密码不为空", "警告", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "用户名不为空", "警告", JOptionPane.ERROR_MESSAGE);
+        }
+        
     }//GEN-LAST:event_BTN_RegisterMouseClicked
 
      private void quit() {
@@ -145,10 +171,12 @@ public class DlgRegister extends javax.swing.JDialog {
 		String msg = "您 现 在 要 退 出 注 册 吗 ？";
 		flag = JOptionPane.showConfirmDialog(null, msg, "提示", JOptionPane.YES_NO_OPTION);
 		if(flag == JOptionPane.YES_OPTION) {
-			this.setVisible(false);
-			parent.setVisible(true);
+                    TF_userName.setText("");
+                    PF_userPwd.setText("");
+                    PF_pwdCheck.setText("");
+                    this.setVisible(false);
+                    parent.setVisible(true);
 		}//End if(flag == JOptionPane.YES_OPTION)
-		return;
 	}
     /**
      * @param args the command line arguments
