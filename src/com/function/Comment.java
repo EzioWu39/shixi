@@ -16,17 +16,8 @@ public class Comment {
     }
     //发送评论
     public boolean sendResult(String username, String moivename, String comment, float rating){
-        Calendar calendars = Calendar.getInstance();
-        String year = String.valueOf(calendars.get(Calendar.YEAR));
-        String month = String.valueOf(calendars.get(Calendar.MONTH) + 1);
-        String day = String.valueOf(calendars.get(Calendar.DATE));
-        String hour = String.valueOf(calendars.get(Calendar.HOUR_OF_DAY));
-        String min = String.valueOf(calendars.get(Calendar.MINUTE));
-        String second = String.valueOf(calendars.get(Calendar.SECOND));
         String message = "{\"username\":\"" + username + "\",\"moviename\":\"" + moivename
-        		+ "\",\"comment\":\"" + comment + "\",\"rating\":" + rating + ",\"time\":{\"year\":" + year
-                + ",\"month\":" + month + ",\"day\":" + day + ",\"hour\":" + hour + ",\"min\":" + min
-                + ",\"second\":" + second + "}}";
+        		+ "\",\"comment\":\"" + comment + "\",\"rating\":" + rating + "}";
         SocketClient.getSocketClient().sendMessage(Protocol.SETCOMMENT + "-" + message);
         String backmessage = SocketClient.getSocketClient().getMessage();
         if(backmessage.equals(Protocol.COMMENTSUCCESS)) return true;

@@ -21,13 +21,13 @@ public class UserManager {
     		return result;
     	}
     }
-    //注册函数，返回注册结果字符串
-    public String register(String username, String password){
+    //注册函数，返回注册结果字符串(协议-用户名|密码-标签1|标签2...)
+    public String register(String username, String password, String tags){
     	if(username.equals("")||password.equals("")) {
     		return Protocol.REGISTERNULL;
     	}
     	else {
-    		SocketClient.getSocketClient().sendMessage(Protocol.REGISTER + "-" + username + "|" + password);
+    		SocketClient.getSocketClient().sendMessage(Protocol.REGISTER + "-" + username + "|" + password + "-" + tags);
     		String result = SocketClient.getSocketClient().getMessage();
     		return result;
     	}
