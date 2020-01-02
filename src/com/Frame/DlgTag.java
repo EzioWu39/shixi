@@ -20,7 +20,7 @@ import javax.swing.JOptionPane;
 public class DlgTag extends javax.swing.JDialog 
 implements ItemListener
 {
-    
+    String taglist = "";
     LinkedList<String>tag = new LinkedList<String>();
     int num_tag=0;
     /**
@@ -89,9 +89,6 @@ implements ItemListener
         JCB_black = new javax.swing.JCheckBox();
         BTN_Confirm = new javax.swing.JButton();
         BTN_Back = new javax.swing.JButton();
-        JLB_test = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -147,10 +144,6 @@ implements ItemListener
             }
         });
 
-        jLabel2.setText("jLabel2");
-
-        jLabel3.setText("jLabel3");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -160,7 +153,7 @@ implements ItemListener
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(JCB_child)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(JCB_adv)
@@ -182,9 +175,8 @@ implements ItemListener
                                 .addGap(33, 33, 33)
                                 .addComponent(BTN_Back))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(JLB_test, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(101, 101, 101)
+                                .addComponent(jLabel1)))
                         .addGap(16, 16, 16)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(JCB_black)
@@ -192,29 +184,15 @@ implements ItemListener
                             .addComponent(JCB_music)
                             .addComponent(JCB_war)
                             .addComponent(JCB_demo)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(JCB_doc))
-                                .addGap(38, 38, 38)
-                                .addComponent(jLabel3)))))
-                .addContainerGap(51, Short.MAX_VALUE))
+                            .addComponent(JCB_doc))))
+                .addContainerGap(131, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(45, 45, 45))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel2)
-                                .addComponent(jLabel3))
-                            .addComponent(JLB_test, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(39, 39, 39)))
+                .addGap(33, 33, 33)
+                .addComponent(jLabel1)
+                .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JCB_adv)
                     .addComponent(JCB_plot)
@@ -229,7 +207,7 @@ implements ItemListener
                     .addComponent(JCB_child)
                     .addComponent(JCB_crime)
                     .addComponent(JCB_music))
-                .addGap(18, 18, 18)
+                .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JCB_drama)
                     .addComponent(JCB_sca)
@@ -244,7 +222,7 @@ implements ItemListener
                     .addComponent(JCB_love)
                     .addComponent(JCB_tech)
                     .addComponent(JCB_black))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BTN_Confirm)
                     .addComponent(BTN_Back))
@@ -262,17 +240,18 @@ implements ItemListener
     private void BTN_ConfirmMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BTN_ConfirmMouseClicked
         // TODO add your handling code here:
         if(!tag.isEmpty()){
-            String taglist = "";
+            //String taglist = "";
             String end = tag.getLast();
             for(String str:tag){
-                System.out.println(str);
-                if(str!=end){
+                if(!str.equals(end)){
                     taglist += str+"|";
                 }
                 else
                     taglist +=str;
             }
+//            String res = com.function.UserManager.getUserManager().register(user, pwd, taglist);
             System.out.println(taglist);
+            this.setVisible(false);
         }
             else
                 JOptionPane.showMessageDialog(null, "标签不能为空", "警告", JOptionPane.ERROR_MESSAGE);
@@ -345,10 +324,7 @@ implements ItemListener
     private javax.swing.JCheckBox JCB_terri;
     private javax.swing.JCheckBox JCB_war;
     private javax.swing.JCheckBox JCB_west;
-    private javax.swing.JLabel JLB_test;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 
     @Override
